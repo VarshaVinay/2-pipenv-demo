@@ -1,0 +1,104 @@
+Dedicated to Sir Corey Schafer 
+This document is verbatim of the video "https://www.youtube.com/watch?v=zDYL22QNiWk" as a text file 
+
+1. Let us create a git repo called pipenv-demo
+
+2. Let us navigate to desktop->PhD->July-2022 and open a terminal using ctlr,alt, T
+
+3. Next let us type git clone https://github.com/VarshaVinay/pipenv-demo.git in the terminal
+
+4. cd into pipenv-demo , ls -la . We can see a .git file. That means we are tracking this project 
+	called pipenv-demo using git
+
+5. LUT(Let us type) pipenv install <package-name>? 
+This results in two files i.e Pipfile and Pipfile.lock
+
+6. To activate the pipenv environment, LUT pipenv shell, LUT ls -la , we can observe two files Pipfile and Pipfile.lock
+
+7. LUT python , next import sys, next sys.executable
+shows : '/home/welcome/.local/share/virtualenvs/pipenv-demo-K92SiAil/bin/python'
+next exit()
+
+8. Let us deactivate the env using exit. Shows exit on the terminal and comes out of the env.
+
+9. We can run commands in the env without activating it, LUT pipenv run python
+next import sys next sys.executable
+shows: '/home/welcome/.local/share/virtualenvs/pipenv-demo-K92SiAil/bin/python'
+next exit()
+
+10. Let us create a file called script.py , inside script.py LUT import sys next sys.executable
+
+11. On the terminal, LUT pipenv run python script.py
+
+12. LUT touch requirements.txt
+
+13. LUT pipenv shell
+
+13. Let us add the packages inside requirements.txt
+
+14. LUT pipenv run python and import one of the packages mentioned in the requirements.txt file,
+example: import wandb, this should be imported successfully
+
+15. LUT pipenv lock -r
+This displays the dependencies in a way that they were been added in the requirements.txt file
+
+16. Let us look at how to install a package only in a development env: 
+
+pipenv install pytest --dev
+This is reflected in the pipfile located in the project dir
+
+17. To remove packages that are already installed LUT pipenv uninstall requests ,
+this is reflected in Pipfile of the project
+
+18. Lets say we want a different version of python for this project.
+Couple of ways to do this: 
+A - Get into the Pipfile and change the version of python to the version we need(say 3.4) and recreate the environment with this new version of python by heading back to the terminal and type pipenv --python 3.4
+
+I failed here. I wont spend time to find out what went wrong . Proceeding to next command
+
+19. Where to locate the env directory? 
+Let us do the following:
+
+A) pipenv run python
+B) >>> import sys
+>>> sys.executable
+'/home/welcome/.local/share/virtualenvs/pipenv-demo-K92SiAil/bin/python' - this is the venv lovation
+
+
+B - Remove the virtual environment and re-create it from scratch
+pipenv --rm, make changes in the Pipfile python ==3.7 line
+pipenv install
+
+I failed here since I have only one python installed in the machine 
+
+20. Important command: pipenv check
+
+We can see the package version recommended and edit the Pipfile using our discretion
+I changed numpy from numpy = "==1.16.4" to numpy "==1.22.2" and the dependencies failed,
+so I retained my numpy to 1.16.4 and bokeh to what was before. Numpy is tightly coupled to tensorflow-gpu version.
+
+21. other commands : 
+pipenv graph : This is very useful for resolving conflicting dependencies.
+What version of a installed package is linked to another package with advised version will be displayed.
+
+
+22. Once we are rest assured that the package versions are correct and dependencies are good to go, we run pipenv lock and then we must type this without fail: pipenv install --ignore-pipfile, 
+
+This will ignore the default Pipfile and use our custom Pipfile we just edited and are sure with the versions of the packages.
+
+23.Done upto 28 mins, then Sir Corey talks about variables etc. I dont think I will use it..
+
+Thank you Sir Corey Schafer
+
+
+
+
+
+
+
+
+
+
+
+
+
