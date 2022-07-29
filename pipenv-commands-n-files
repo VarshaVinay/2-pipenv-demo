@@ -1,4 +1,4 @@
-Dedicated to Sir Corey Schafer 
+ 
 This document is verbatim of the video "https://www.youtube.com/watch?v=zDYL22QNiWk" as a text file 
 
 1. Let us create a git repo called pipenv-demo
@@ -87,8 +87,6 @@ What version of a installed package is linked to another package with advised ve
 This will ignore the default Pipfile and use our custom Pipfile we just edited and are sure with the versions of the packages.
 
 23.Done upto 28 mins, then Sir Corey talks about variables etc. I dont think I will use it..
-
-Thank you Sir Corey Schafer
 
 
 
