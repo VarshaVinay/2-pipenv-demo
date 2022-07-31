@@ -35,6 +35,7 @@ next exit()
 13. LUT pipenv shell
 
 13. Let us add the packages inside requirements.txt
+13A. LUT pipevn install -r requirements.txt
 
 14. LUT pipenv run python and import one of the packages mentioned in the requirements.txt file,
 example: import wandb, this should be imported successfully
